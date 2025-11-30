@@ -1,11 +1,9 @@
-import 'package:equatable/equatable.dart';
+import 'package:very_good_ventures_test/features/coffee_image/domain/entities/coffee_image_entity.dart';
 
-final class CoffeeImageModel extends Equatable {
-  /// The coffee image file URL
-  final String file;
+final class CoffeeImageModel extends CoffeeImageEntity {
+  const CoffeeImageModel({required super.file});
 
-  const CoffeeImageModel({required this.file});
-
-  @override
-  List<Object?> get props => [file];
+  factory CoffeeImageModel.fromJson(Map<String, dynamic> json) {
+    return CoffeeImageModel(file: json['file']);
+  }
 }
