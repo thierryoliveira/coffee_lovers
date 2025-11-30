@@ -5,4 +5,7 @@ import 'package:very_good_ventures_test/features/coffee_image/domain/entities/co
 /// Repository interface for coffee image related operations.
 abstract interface class CoffeeImageRepository {
   Future<Either<Failure, CoffeeImageEntity>> getRandomCoffeeImage();
+  Future<Either<Failure, void>> saveFavorite(String url);
+  Future<Either<Failure, List<CoffeeImageEntity>>> getFavorites();
+  Future<Either<Failure, void>> removeFavorite(String url);
 }
