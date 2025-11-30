@@ -6,4 +6,8 @@ final class CoffeeImageModel extends CoffeeImageEntity {
   factory CoffeeImageModel.fromJson(Map<String, dynamic> json) {
     return CoffeeImageModel(file: json['file']);
   }
+
+  CoffeeImageEntity toEntity() {
+    return CoffeeImageEntity(file: file);
+  }
 }
