@@ -3,8 +3,8 @@ import 'package:very_good_ventures_test/core/errors/exceptions/server_exception.
 import 'package:very_good_ventures_test/core/errors/failures/failure.dart';
 import 'package:very_good_ventures_test/core/errors/failures/local_storage_failure.dart';
 import 'package:very_good_ventures_test/core/errors/failures/server_failure.dart';
-import 'package:very_good_ventures_test/features/coffee_image/data/datasources/coffee_image_remote_datasource.dart';
 import 'package:very_good_ventures_test/features/coffee_image/data/datasources/local/coffee_image_local_datasource.dart';
+import 'package:very_good_ventures_test/features/coffee_image/data/datasources/remote/coffee_image_remote_datasource.dart';
 import 'package:very_good_ventures_test/features/coffee_image/data/models/coffee_image_model.dart';
 import 'package:very_good_ventures_test/features/coffee_image/domain/entities/coffee_image_entity.dart';
 import 'package:very_good_ventures_test/features/coffee_image/domain/repositories/coffee_image_repository.dart';
