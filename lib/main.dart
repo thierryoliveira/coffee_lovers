@@ -5,7 +5,8 @@ import 'package:very_good_ventures_test/core/routes/routes.dart';
 import 'package:very_good_ventures_test/core/service_locator/service_locator.dart';
 import 'package:very_good_ventures_test/features/coffee_image/presentation/cubits/favorite_coffee_image_cubit/favorite_coffee_images_cubit.dart';
 import 'package:very_good_ventures_test/features/coffee_image/presentation/cubits/random_coffee_image_cubit/random_coffee_image_cubit.dart';
-import 'package:very_good_ventures_test/features/coffee_image/presentation/screen/random_coffee_image_screen.dart';
+import 'package:very_good_ventures_test/features/coffee_image/presentation/screens/favorite_coffee_images_screen.dart';
+import 'package:very_good_ventures_test/features/coffee_image/presentation/screens/random_coffee_image_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,6 +34,10 @@ class MyApp extends StatelessWidget {
             BlocProvider(create: (context) => FavoriteCoffeeImagesCubit()),
           ],
           child: const RandomCoffeeImageScreen(),
+        ),
+        Routes.favorites: (context) => BlocProvider(
+          create: (context) => FavoriteCoffeeImagesCubit(),
+          child: const FavoriteCoffeeImagesScreen(),
         ),
       },
     );

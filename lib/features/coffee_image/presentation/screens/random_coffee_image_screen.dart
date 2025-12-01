@@ -127,7 +127,17 @@ class _ActionButtons extends StatelessWidget {
         children: [
           Flexible(
             child: _Button(
-              onPressed: () => Navigator.pushNamed(context, Routes.favorites),
+              onPressed: () async {
+                final result = await Navigator.pushNamed(
+                  context,
+                  Routes.favorites,
+                );
+                if (context.mounted && result is String && result.isNotEmpty) {
+                  context.read<RandomCoffeeImageCubit>().loadSpecificImage(
+                    result,
+                  );
+                }
+              },
               label: 'Favorites',
               icon: Icons.list_rounded,
             ),

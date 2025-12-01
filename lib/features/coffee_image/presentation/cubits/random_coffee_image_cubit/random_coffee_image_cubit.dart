@@ -21,4 +21,8 @@ class RandomCoffeeImageCubit extends Cubit<RandomCoffeeImageState> {
       },
     );
   }
+
+  void loadSpecificImage(String url) {
+    emit(RandomCoffeeImageLoaded(imageUrl: url));
+  }
 }
