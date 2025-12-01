@@ -3,22 +3,27 @@ import 'package:very_good_ventures_test/features/coffee_image/data/datasources/l
 import 'package:very_good_ventures_test/features/coffee_image/data/models/coffee_image_model.dart';
 
 class CoffeeImageLocalDataSourceImpl implements CoffeeImageLocalDataSource {
-  static const String favoritesBox = 'favorites';
+  final Box favoritesBox;
+
+  CoffeeImageLocalDataSourceImpl({required this.favoritesBox});
+
   @override
   Future<void> saveFavorite(String url) async {
-    final box = await Hive.openBox<String>(favoritesBox);
-    await box.add(url);
+    await favoritesBox.add(url);
   }
 
   @override
   Future<List<CoffeeImageModel>> getFavoriteUrls() async {
-    final box = await Hive.openBox<String>(favoritesBox);
-    return box.values.map((url) => CoffeeImageModel(file: url)).toList();
+    return favoritesBox.values
+        .map((url) => CoffeeImageModel(file: url))
+        .toList();
   }
 
   @override
   Future<void> removeFavorite(String url) async {
-    final box = await Hive.openBox<String>(favoritesBox);
-    return box.delete(url);
+    final index = favoritesBox.values.toList().indexOf(url);
+    if (index != -1) {
+      await favoritesBox.deleteAt(index);
+    }
   }
 }
