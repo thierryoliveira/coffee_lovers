@@ -14,7 +14,7 @@ final class CoffeeImageServiceLocatorCointaner extends ServiceLocatorContainer {
     // DataSources
     serviceLocator.sl
       ..registerFactory<CoffeeImageRemoteDataSource>(
-        () => CoffeeImageRemoteDatasourceImpl(client: Client()),
+        () => CoffeeImageRemoteDataSourceImpl(client: Client()),
       )
       ..registerFactory<CoffeeImageLocalDataSource>(
         () => CoffeeImageLocalDataSourceImpl(

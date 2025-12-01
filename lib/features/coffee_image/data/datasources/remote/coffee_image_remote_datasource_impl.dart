@@ -6,10 +6,10 @@ import 'package:very_good_ventures_test/features/coffee_image/core/constants/cof
 import 'package:very_good_ventures_test/features/coffee_image/data/datasources/remote/coffee_image_remote_datasource.dart';
 import 'package:very_good_ventures_test/features/coffee_image/data/models/coffee_image_model.dart';
 
-class CoffeeImageRemoteDatasourceImpl implements CoffeeImageRemoteDataSource {
+class CoffeeImageRemoteDataSourceImpl implements CoffeeImageRemoteDataSource {
   final http.Client _client;
 
-  CoffeeImageRemoteDatasourceImpl({required http.Client client})
+  CoffeeImageRemoteDataSourceImpl({required http.Client client})
     : _client = client;
 
   @override
