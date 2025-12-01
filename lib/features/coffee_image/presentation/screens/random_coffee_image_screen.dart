@@ -92,8 +92,26 @@ class _RandomCoffeeImageScreenState extends State<RandomCoffeeImageScreen> {
                   );
                 }
                 if (state is RandomCoffeeImageError) {
-                  final message = state.message;
-                  return Center(child: Text('Error: $message'));
+                  return const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('🚫📷', style: TextStyle(fontSize: 100)),
+                        SizedBox(height: 16),
+                        Center(
+                          child: Text(
+                            'Something went wrong when loading an amazing image. Why not shuffle it or check your favorites?',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
                 }
                 return const SizedBox.shrink();
               },
