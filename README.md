@@ -5,6 +5,10 @@ This project was built as part of a technical challenge for Very Good Ventures.
 
 ---
 
+<img src="./assets/coffee-lovers.gif" height="512"/>
+
+---
+
 ## ✨ Features
 
 - Fetch a random coffee image from a public API
@@ -53,9 +57,9 @@ fvm flutter test
 ## 🧪 Testing
 
 The project contains Unit tests that ensure:
-	•	Remote and local data layer behavior is correct
-	•	State handling in Cubits works as expected
-I would love to add a few golden tests as well (like a first try using the `alchemist` 🦄 instead of the usual `golden_tookit`), but I'm about to run out-of-time for sharing this project.
+* Remote and local data layer behavior is correct
+* State handling in Cubits works as expected. 
+* I would love to add a few golden tests as well (like a first try using the `alchemist` 🦄 instead of the usual `golden_tookit`), but I'm about to run out-of-time for sharing this project.
 
 ## Dependencies
 * flutter_bloc: State management with Cubit
