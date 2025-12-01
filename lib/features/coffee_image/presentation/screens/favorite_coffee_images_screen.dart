@@ -30,7 +30,27 @@ class _FavoriteCoffeeImagesScreenState
           }
           final images = state.coffeeImages;
           if (images.isEmpty) {
-            return const Center(child: Text('Nenhuma imagem favorita.'));
+            return const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('☕️', style: TextStyle(fontSize: 100)),
+                  SizedBox(height: 16),
+                  Center(
+                    child: Text(
+                      'You have no favorite images yet. Why not add some? ',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.brown,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
           }
           return Padding(
             padding: const EdgeInsets.all(8.0),
